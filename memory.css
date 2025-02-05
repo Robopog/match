@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Satisfy&display=swap");
+
+h1 {
+  font-family: "Bungee Inline", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(to right, #ff9a9e, #fad0c4, #fbc2eb);
+  margin-bottom: 40rem;
+}
+
+.frame {
+  text-align: center;
+}
+
+.board {
+  display: inline-grid;
+  background-color: #e4e4e4;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.board div {
+  width: 90px;
+  height: 90px;
+  background-color: #3bbed5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  border-radius: 12px;
+  box-shadow: inset 0px 0px 8px black;
+  transition: 0.5s;
+}
+
+.board div span {
+  display: none;
+  pointer-events: none;
+}
+
+.board div.showing {
+  background: #e26000;
+  transform: matrix3d(1, 0, 2, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1);
+}
+
+.board div.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.board div.showing span {
+  display: initial;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.center button {
+  background-color: #3bbed5;
+  border: 1.5px inset solid;
+  padding: 10px 25px;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.center button:hover {
+  background-color: #fbe2cb;
+}
+
+@media screen and (max-width: 768px) {
+  .center button {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+  .board div {
+    width: 60px;
+    height: 60px;
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+
+    }
+
+    .board {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 300px;
+    }
+
+    .board div {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+  }
